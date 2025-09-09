@@ -13,7 +13,10 @@ public class Curse : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        ParticleSystem.GetComponent<ParticleSystem>().Play();
-        Debug.Log("CURSE");
+        if (other.GetComponent<PlayerMovement>()!= null)
+        {
+            ParticleSystem.GetComponent<ParticleSystem>().Play();
+            other.GetComponent<PlayerMovement>().ScrambleKeys();
+        }
     }
 }

@@ -13,13 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public int keyDown;
     public string keyUpLetter;
     public string keyDownLetter;
-    
+    public int newKeyUp;
+    public int newKeyDown;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        keyUp = 1;
-        keyDown = 3;
+        keyUp = 2;
+        keyDown = 12;
     }
 
     // Update is called once per frame
@@ -55,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
                 keyUpLetter = "o";
                 break;
             case 10:
-                keyUpLetter = "P";
+                keyUpLetter = "p";
                 break;
             case 11:
                 keyUpLetter = "a";
@@ -137,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
                 keyDownLetter = "o";
                 break;
             case 10:
-                keyDownLetter = "P";
+                keyDownLetter = "p";
                 break;
             case 11:
                 keyDownLetter = "a";
@@ -208,5 +210,21 @@ public class PlayerMovement : MonoBehaviour
                 transform.position = transform.position + new Vector3(0, -8, 0);
             }
         }
+
+        Debug.Log(keyUpLetter);
+        Debug.Log(keyDownLetter);
+    }
+
+    public void ScrambleKeys()
+    {
+        do
+        {
+            newKeyUp = Random.Range(1, 27);
+            newKeyDown = Random.Range(1, 27);
+        } while (newKeyUp == newKeyDown);
+
+        keyUp = newKeyUp;
+        keyDown = newKeyDown;
+        
     }
 }
