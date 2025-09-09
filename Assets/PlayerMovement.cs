@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public string keyDownLetter;
     public int newKeyUp;
     public int newKeyDown;
+    public TMP_Text upKeyText;
+    public TMP_Text downKeyText;
 
 
     // Start is called before the first frame update
@@ -22,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     {
         keyUp = 2;
         keyDown = 12;
+        upKeyText.text = "w";
+        downKeyText.text = "s";
     }
 
     // Update is called once per frame
@@ -191,6 +196,9 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
 
+        upKeyText.text = keyUpLetter;
+        downKeyText.text = keyDownLetter;
+
         transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0, 0);
         if (Input.GetKeyDown(keyUpLetter))
         {
@@ -210,9 +218,6 @@ public class PlayerMovement : MonoBehaviour
                 transform.position = transform.position + new Vector3(0, -8, 0);
             }
         }
-
-        Debug.Log(keyUpLetter);
-        Debug.Log(keyDownLetter);
     }
 
     public void ScrambleKeys()
