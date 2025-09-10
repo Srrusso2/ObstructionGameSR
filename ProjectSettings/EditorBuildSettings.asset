@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Start Screen.unity
+    guid: 6cfb350110c97134b9f610a68cbfaef6
+  - enabled: 1
+    path: Assets/Intro Screen.unity
+    guid: 37b82f8e286f2e040acba53194e84b54
+  - enabled: 1
+    path: Assets/Gameplay Screen.unity
+    guid: 36ec723048f77d8438b9c4a8ceb06bf1
+  - enabled: 1
+    path: Assets/Game Over Screen.unity
+    guid: 06d1d10c3b3f3c44f84e214c85ed9546
+  - enabled: 1
+    path: Assets/Win Screen.unity
+    guid: badc7cab0b9615d43b7bc0cf7e212596
   m_configObjects: {}
